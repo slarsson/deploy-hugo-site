@@ -8,14 +8,14 @@ require('dotenv').config();
 
 const GIT_USERNAME = process.env.GIT_USERNAME;
 const GIT_PASSWORD = process.env.GIT_PASSWORD;
-const GIT_REPO = process.env.GIT_REPO || 'hugo2';
-const GIT_BRANCH =  process.env.GIT_BRANCH || 'deploy2';
+const GIT_REPO = process.env.GIT_REPO || 'iceproofarctic';
+const GIT_BRANCH =  process.env.GIT_BRANCH || 'master';
 
 const TRIGGER_UPDATE_PATH = process.env.TRIGGER_UPDATE_PATH  || 'update';
 const NODE_PORT = process.env.NODE_PORT || 3000;
 
 const OUTPUT_PATH = '/var/www/html' + process.env.HUGO_BASE_URL;
-const HUGO_BASE_URL = process.env.HUGO_BASE_URL;
+const HUGO_BASE_URL = process.env.HUGO_BASE_URL || '';
 const HUGO_FOLDER = process.env.HUGO_FOLDER || 'hugo';
 const HUGO_PUBLIC_PATH = `./${GIT_REPO}/${HUGO_FOLDER}/public`;
 
