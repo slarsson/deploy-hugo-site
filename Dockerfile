@@ -15,8 +15,10 @@ RUN apt-get update && \
 COPY deploy.js ./home/setup/
 COPY package.json ./home/setup/
 
-RUN wget https://github.com/gohugoio/hugo/releases/download/v0.61.0/hugo_0.61.0_Linux-64bit.deb && \
-    dpkg -i hugo_0.61.0_Linux-64bit.deb
+RUN wget https://github.com/gohugoio/hugo/releases/download/v0.63.2/hugo_0.63.2_Linux-64bit.deb && \
+    dpkg -i hugo_0.63.2_Linux-64bit.deb
+#RUN wget https://github.com/gohugoio/hugo/releases/download/v0.61.0/hugo_0.61.0_Linux-64bit.deb && \
+#    dpkg -i hugo_0.61.0_Linux-64bit.deb
 
 WORKDIR /home/setup
 RUN npm install
