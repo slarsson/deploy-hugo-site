@@ -71,7 +71,7 @@ const update = () => {
         );
 
         execSync(
-            `hugo -D --baseURL=${HUGO_BASE_URL}`,
+            `hugo -E -F --baseURL=${HUGO_BASE_URL}`,
             {cwd: __dirname + `/${GIT_REPO}/${HUGO_FOLDER}`, stdio: 'inherit'}
         );
             
