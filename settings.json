@@ -1,0 +1,11 @@
+{
+    "git": {
+        "owner": "slarsson",
+        "repository": "iceproofarctic",
+        "branch": "master"
+    },
+    "hugo": {
+        "target": "hugo",
+        "flags": ["-E", "-F", "--baseURL=/", "--minify"]
+    }
+}
