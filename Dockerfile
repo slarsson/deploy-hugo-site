@@ -1,6 +1,6 @@
 FROM ubuntu:20.04
 
-ENV SECRET '021f815542e68049c1d7b2c2fdb3e52c'
+ENV SECRET 'asdfasdfasdasdf'
 ENV GIT_USERNAME 'slarsson'
 ENV GIT_PASSWORD ''
 ENV DOMAIN 'localhost'
@@ -23,13 +23,11 @@ RUN chmod 777 /home
 
 RUN wget https://github.com/gohugoio/hugo/releases/download/v0.63.2/hugo_0.63.2_Linux-64bit.deb && \
     dpkg -i hugo_0.63.2_Linux-64bit.deb
-#COPY hugo_0.63.2_Linux-64bit.deb .
-#RUN dpkg -i hugo_0.63.2_Linux-64bit.deb
 
-# RUN openssl req -x509 -nodes -new -sha256 -days 1024 -newkey rsa:2048 -keyout RootCA.key -out RootCA.pem -subj "/C=US/CN=Example-Root-CA"
-# RUN openssl x509 -outform pem -in RootCA.pem -out RootCA.crt
-
+# dir used for html
 RUN mkdir /home/www
-RUN mkdir /home/certbot
+
+# dir used by ./well-known
+RUN mkdir /home/certbot 
 
 CMD ["/bin/bash", "-c", "nginx && python3 deploy.py"]
